@@ -1,7 +1,6 @@
-====================================================================
 Autonomous UAV Mission Planning Under Threat Using Model Predictive
 Control with Proportional-Navigation Pursuers
-====================================================================
+
 
 Author:
     Mehmet Barış Özçelik
