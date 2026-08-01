@@ -17,9 +17,7 @@ Project Type:
     Master's thesis MATLAB simulation framework
 
 
-====================================================================
 1. Project Overview
-====================================================================
 
 This MATLAB project implements a two-dimensional autonomous UAV mission
 planning and guidance simulation in a contested environment. The UAV
@@ -44,9 +42,7 @@ presentation framework for analyzing UAV guidance, threat avoidance,
 and pursuit-evasion behavior under consistent and fair assumptions.
 
 
-====================================================================
 2. Main Thesis Objective
-====================================================================
 
 The main objective of the thesis is to evaluate whether model predictive
 control improves UAV survivability in a threat environment and whether
@@ -82,9 +78,7 @@ This structure supports the main thesis conclusions:
       produces a smaller miss distance, even when capture is avoided.
 
 
-====================================================================
 3. Folder Structure
-====================================================================
 
 The project is organized as follows:
 
@@ -147,9 +141,7 @@ The project is organized as follows:
         This file.
 
 
-====================================================================
 4. How to Run the Project
-====================================================================
 
 Open MATLAB and set the current folder to the main project folder.
 
@@ -166,16 +158,12 @@ The main GUI is the recommended way to present the thesis simulations
 during a defense or project demonstration.
 
 
-====================================================================
 5. Main GUI Demonstrations
-====================================================================
 
 The GUI provides four main demonstrations.
 
 
---------------------------------------------------------------------
 Demo 1: PN vs Pure Pursuit Crossing Engagement
---------------------------------------------------------------------
 
 Files:
     demo/sim1_pn_vs_pp_crossing.m
@@ -204,9 +192,7 @@ Main metrics:
     - path length
 
 
---------------------------------------------------------------------
 Demo 2: MPC vs No-MPC NFZ Avoidance
---------------------------------------------------------------------
 
 Files:
     demo/sim2_mpc_avoid.m
@@ -241,9 +227,7 @@ Main metrics:
     - minimum NFZ clearance
 
 
---------------------------------------------------------------------
 Demo 3: Fair Full-Mission Comparison
---------------------------------------------------------------------
 
 File:
     demo/sim3_full_mission_compare.m
@@ -281,9 +265,7 @@ Main metrics:
     - exposure metrics
 
 
---------------------------------------------------------------------
 Demo 4: Parameter Sweeps and Mission Statistics
---------------------------------------------------------------------
 
 File:
     demo/sim3_param_sweep.m
@@ -324,9 +306,7 @@ Main metrics:
     - maximum MPC computation time
 
 
-====================================================================
 6. Important MATLAB Commands
-====================================================================
 
 Run the main GUI:
 
@@ -365,9 +345,7 @@ Run Demo 4 parameter sweeps:
     sim3_param_sweep
 
 
-====================================================================
 7. Configuration
-====================================================================
 
 The main configuration file is:
 
@@ -388,9 +366,7 @@ Most thesis parameters should be changed in config.m rather than inside
 individual demo files.
 
 
-====================================================================
 8. Environment and Threat Modeling
-====================================================================
 
 The environment is created by:
 
@@ -418,9 +394,7 @@ The environment generator checks:
     - mission points are not too close to threat boundaries
 
 
-====================================================================
 9. Routing
-====================================================================
 
 Routing is handled by:
 
@@ -443,15 +417,11 @@ mission points. This avoids relying on a simple fallback route and makes
 the full-mission simulation cleaner and more defensible.
 
 
-====================================================================
 10. UAV Guidance
-====================================================================
 
 Two UAV guidance modes are implemented.
 
---------------------------------------------------------------------
 Route mode
---------------------------------------------------------------------
 
 File:
     core/simple_route_step.m
@@ -461,9 +431,7 @@ Description:
     This mode does not explicitly reason about NFZs or radar regions and
     acts as the non-MPC baseline.
 
---------------------------------------------------------------------
 MPC mode
---------------------------------------------------------------------
 
 File:
     core/mpc_step.m
@@ -484,15 +452,11 @@ Only the first control command is applied at each time step, and the
 optimization is repeated at the next step.
 
 
-====================================================================
 11. Chaser Models
-====================================================================
 
 The chaser has two guidance modes.
 
---------------------------------------------------------------------
 Basic chaser
---------------------------------------------------------------------
 
 File:
     pursuer/simulate_pursuer_basic.m
@@ -501,9 +465,9 @@ Description:
     A pure-pursuit style chaser that turns directly toward the current
     UAV position using a proportional heading-error controller.
 
---------------------------------------------------------------------
+
 Proportional-navigation chaser
---------------------------------------------------------------------
+
 
 File:
     pursuer/simulate_pursuer_pn.m
@@ -517,9 +481,7 @@ Fairness note:
     start position, turn-rate limit, and capture radius. Only the guidance law changes.
 
 
-====================================================================
 12. Metrics
-====================================================================
 
 The simulation computes the following metrics:
 
@@ -551,9 +513,7 @@ Computation metrics:
     - number of MPC steps
 
 
-====================================================================
 13. Typical Thesis Results
-====================================================================
 
 The current fair full-mission comparison gives the following qualitative
 behavior:
@@ -594,9 +554,7 @@ This supports the thesis conclusions:
     5. Increasing chaser-to-UAV speed ratio makes interception more likely and
        generally reduces catch time.
 
-====================================================================
 14. GUI Role in the Thesis
-====================================================================
 
 The GUI is an important part of the project. It is not only a convenience
 tool; it is also a demonstration and reproducibility platform.
@@ -613,9 +571,7 @@ Recommended defense structure:
     4. Use parameter-sweep tables to support numerical conclusions.
 
 
-====================================================================
 15. Notes and Limitations
-====================================================================
 
 This project uses a simplified two-dimensional point-mass UAV model.
 The current simulation assumes:
@@ -643,9 +599,7 @@ simulation. Future work may include:
     - machine-learning-assisted mission planning
 
 
-====================================================================
 16. Troubleshooting
-====================================================================
 
 If MATLAB cannot find functions, run:
 
@@ -675,9 +629,7 @@ If chaser behavior appears incorrect, check:
     pursuer/simulate_pursuer_pn.m
     pursuer/init_pursuer.m
 
-====================================================================
 17. Recommended Thesis Figures
-====================================================================
 
 Recommended figures for the thesis document:
 
